@@ -63,6 +63,7 @@ router.get("/prices", function(req, res) {
             price: 14000
         }
     ];
-    res.render("prices", { title: "Ціни на тури", tours: tours });
+    var scripts = [{src:"/javascripts/prices.js"}];
+    res.render("prices", { title: "Ціни на тури", tours: tours, scripts: scripts });
 });
 module.exports = router;
