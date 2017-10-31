@@ -1,0 +1,14 @@
+<div class="row">
+    {{#tours}}
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+            <img class="card-img-top" src="http://loremflickr.com/318/180/{{country_en}}" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">{{country_uk}}</h4>
+                <p class="card-text">{{days}}, {{price}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>        
+    </div>
+    {{/tours}}
+</div>
