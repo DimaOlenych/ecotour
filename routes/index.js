@@ -3,15 +3,18 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Головна сторінка' });
+    var scripts = [{ src: "/javascripts/home.js" }];
+    res.render('index', { title: 'Головна сторінка', scripts: scripts });
 });
 
 router.get('/about', function(req, res, next) {
-    res.render('about', { title: 'Про фірму' });
+    var scripts = [{ src: "/javascripts/about.js" }];
+    res.render('about', { title: 'Про фірму', scripts: scripts });
 });
 
 router.get('/contact', function(req, res, next) {
-    res.render('contact', { title: 'Контакти' });
+    var scripts = [{ src: "/javascripts/contact.js" }];
+    res.render('contact', { title: 'Контакти', scripts: scripts });
 });
 
 router.post("/contact", function(req, res) {
@@ -63,7 +66,7 @@ router.get("/prices", function(req, res) {
             price: 14000
         }
     ];
-    var scripts = [{src:"/javascripts/prices.js"}];
+    var scripts = [{ src: "/javascripts/prices.js" }];
     res.render("prices", { title: "Ціни на тури", tours: tours, scripts: scripts });
 });
 module.exports = router;

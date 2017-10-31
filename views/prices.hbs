@@ -1,9 +1,10 @@
 <div class="row">
     <div class="col-sm-12">
-        <button id="showr">Show</button>
-        <button id="hider">Hide</button>
+        <button id="btnShow" class="btn btn-primary">Show</button>
+        <button id="btnHide" class="btn btn-danger">Hide</button>
     </div>
 </div>
+
 <div class="row">
     {{#tours}}
     <div class="col-sm-6 col-md-4 col-lg-3">
@@ -14,8 +15,7 @@
                 <p class="card-text">{{days}}, {{price}}</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-        </div>
+        </div>        
     </div>
     {{/tours}}
 </div>
-
