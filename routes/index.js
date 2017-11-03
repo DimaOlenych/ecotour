@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Tour = require('../models/tour');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -35,12 +36,22 @@ router.post("/contact", function(req, res) {
 });
 
 router.get("/prices", function(req, res) {
-    var tours = [{
-            country_en: "Egypt",
-            country_uk: "Єгипет",
-            days: 6,
-            price: 12000
-        },
+    Tour.find({}, function(err, tours) {
+        if (err) {
+            res.locals.message = err.message;
+            res.locals.error = req.app.get('env') === 'development' ? err : {};
+            // render the error page
+            res.status(err.status || 500);
+            res.render('error');
+        }
+
+        res.render("prices", { title: "Ціни на тури", tours: tours, scripts: [{ src: "/javascripts/prices.js" }] });
+    });
+});
+
+router.get("/setup-db", function(req, res) {
+    var tours = [
+        { country_en: "Egypt", country_uk: "Єгипет", days: 6, price: 12000 },
         {
             country_en: "Greece",
             country_uk: "Греція",
@@ -66,7 +77,17 @@ router.get("/prices", function(req, res) {
             price: 14000
         }
     ];
-    var scripts = [{ src: "/javascripts/prices.js" }];
-    res.render("prices", { title: "Ціни на тури", tours: tours, scripts: scripts });
+
+    Tour.remove({}, function(err) {
+        if (err) {
+            console.log(err)
+        }
+        Tour.insertMany(tours, function(err, docs) {
+            if (err) {
+                console.log(err)
+            }
+            res.status(200).json({ message: "Ok" });
+        })
+    });
 });
 module.exports = router;

@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 //var users = require('./routes/users');
+var mongoose = require('mongoose');
 
 var app = express();
 
@@ -35,6 +36,9 @@ if (app.get('env') == 'development') {
     var cbs = require('connect-browser-sync');
     app.use(cbs(bs));
 }
+
+mongoose.connect('mongodb://127.0.0.1:27017/ecotour', { useMongoClient: true });
+mongoose.Promise = global.Promise;
 
 app.use('/', index);
 //app.use('/users', users);
