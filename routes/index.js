@@ -63,7 +63,11 @@ router.get("/prices", function(req, res) {
             res.render('error');
         }
 
-        res.render("prices", { title: "Ціни на тури", tours: tours, scripts: [{ src: "/javascripts/prices.js" }] });
+        res.render("prices", {
+            title: "Ціни на тури",
+            tours: tours,
+            scripts: [{ src: "/javascripts/prices.js" }]
+        });
     });
 });
 
