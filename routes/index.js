@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Tour = require('../models/tour');
+var Page = require('../models/page');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,8 +10,25 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/about', function(req, res, next) {
-    var scripts = [{ src: "/javascripts/about.js" }];
-    res.render('about', { title: 'Про фірму', scripts: scripts });
+    Page.findOne({ name: "about" }, function(err, page) {
+        if (err) {
+            res.locals.message = err.message;
+            res.locals.error = req.app.get('env') === 'development' ? err : {};
+            // render the error page
+            res.status(err.status || 500);
+            res.render('error');
+        } else {
+            var scripts = [{ src: "/javascripts/about.js" }];
+            if (page == null) {
+                page = { name: "about", main_text: "<strong>Empty page or page not found</strong>" };
+            }
+            res.render('about', {
+                title: 'Про фірму',
+                main_text: page.main_text,
+                scripts: scripts
+            });
+        }
+    });
 });
 
 router.get('/contact', function(req, res, next) {
