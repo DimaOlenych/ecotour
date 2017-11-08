@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var admin = require('./routes/admin');
 //var users = require('./routes/users');
 var mongoose = require('mongoose');
 
@@ -41,6 +42,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/ecotour', { useMongoClient: true });
 mongoose.Promise = global.Promise;
 
 app.use('/', index);
+app.use('/admin', admin);
 //app.use('/users', users);
 
 // catch 404 and forward to error handler
