@@ -4,20 +4,43 @@ var Tour = require('../models/tour');
 var Page = require('../models/page');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-    var scripts = [{
-        src: "/javascripts/home.js"
-    }];
-    res.render('index', {
-        title: 'Головна сторінка',
-        scripts: scripts
+router.get('/', function(req, res, next) {
+    Page.findOne({
+        name: "home"
+    }, function(err, page) {
+        if (err) {
+            res.locals.message = err.message;
+            res.locals.error = req.app.get('env') === 'development' ? err : {};
+            // render the error page
+            res.status(err.status || 500);
+            res.render('error');
+        } else {
+            var scripts = [{
+                src: "/javascripts/home.js"
+            }];
+            if (page == null) {
+                page = {
+                    name: "home",
+                    main_text: "<strong>Empty page or page not found</strong>"
+                };
+            }
+            res.render('index', {
+                title: 'Головна сторінка',
+                main_text: page.main_text,
+                scripts: scripts
+            });
+        }
     });
 });
 
-router.get('/about', function (req, res, next) {
+router.get('/home', function(req, res, next) {
+    res.redirect('/');
+});
+
+router.get('/about', function(req, res, next) {
     Page.findOne({
         name: "about"
-    }, function (err, page) {
+    }, function(err, page) {
         if (err) {
             res.locals.message = err.message;
             res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -44,7 +67,7 @@ router.get('/about', function (req, res, next) {
     });
 });
 
-router.get('/contact', function (req, res, next) {
+router.get('/contact', function(req, res, next) {
     var scripts = [{
         src: "/javascripts/contact.js"
     }];
@@ -54,7 +77,7 @@ router.get('/contact', function (req, res, next) {
     });
 });
 
-router.post("/contact", function (req, res) {
+router.post("/contact", function(req, res) {
     console.log(req.body.name);
     console.log(req.body.email);
     console.log(req.body.message);
@@ -73,8 +96,8 @@ router.post("/contact", function (req, res) {
     }
 });
 
-router.get("/prices", function (req, res) {
-    Tour.find({}, function (err, tours) {
+router.get("/prices", function(req, res) {
+    Tour.find({}, function(err, tours) {
         if (err) {
             res.locals.message = err.message;
             res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -93,7 +116,7 @@ router.get("/prices", function (req, res) {
     });
 });
 
-router.get("/setup-db", function (req, res) {
+router.get("/setup-db", function(req, res) {
     var tours = [{
             country_en: "Egypt",
             country_uk: "Єгипет",
@@ -126,11 +149,11 @@ router.get("/setup-db", function (req, res) {
         }
     ];
 
-    Tour.remove({}, function (err) {
+    Tour.remove({}, function(err) {
         if (err) {
             console.log(err)
         }
-        Tour.insertMany(tours, function (err, docs) {
+        Tour.insertMany(tours, function(err, docs) {
             if (err) {
                 console.log(err)
             }
@@ -144,7 +167,7 @@ router.get("/setup-db", function (req, res) {
         name: "about",
         main_text: "Empty page"
     });
-    page.save(function (err) {
+    page.save(function(err) {
         if (err) {
             console.error(err)
         } else {

@@ -1,8 +1,11 @@
 <h1>Edit</h1>
 <form class="form" method="POST" action="/admin/edit">
-    <input type="hidden" name="hidden_id" id="hidden_id" value="{{hidden_id}}"></input>
-    <div class="form-group">      
-      <textarea class="form-control" name="editor1" id="editor1" rows="3">{{{main_text}}}</textarea>
-    </div>
-    <button class="btn btn-primary" type="submit">Зберегти</button>
+  <input type="hidden" name="hidden_id" id="hidden_id" value="{{hidden_id}}"></input>
+  <input type="hidden" name="hidden_name" id="hidden_name" value="{{hidden_name}}"></input>
+  <div class="form-group">
+    <textarea class="form-control" name="editor1" id="editor1" rows="3">
+        {{{main_text}}}
+    </textarea>
+  </div>
+  <button class="btn btn-primary" type="submit">Зберегти</button>
 </form>
