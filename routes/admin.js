@@ -2,40 +2,67 @@ var express = require('express');
 var router = express.Router();
 var Page = require('../models/page');
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
     res.render('admin/index');
 });
 
-
-router.get('/edit', function(req, res) {
-    res.render('admin/edit', {
-        title: "Ціни на тури",
-        scripts: [
-            { src: "/javascripts/ckeditor/ckeditor.js" },
-            { src: "/javascripts/admin/edit.js" }
-        ]
-    });
-});
-
-router.post('/edit', function(req, res) {
-    console.log(req.params);
-    Page.findOne({ name: "about" }, function(err, page) {
-        console.log(page);
-        if (page) {
-            page.set('main_text', req.params.editor1);
-        } else
-            page = new Page({
-                name: 'about',
-                main_text: req.params.editor1
-            });
-        page.save(function(err, otherPage) {
-            if (err) {
-                res.render('error');
+router.get('/edit', function (req, res) {
+    console.log("Step 1");
+    Page.findOne({
+        name: "about"
+    }, function (err, page) {
+        console.log("Step 2");
+        if (err) {
+            res.locals.message = err.message;
+            res.locals.error = req.app.get('env') === 'development' ? err : {};
+            // render the error page
+            res.status(err.status || 500);
+            res.render('error');
+        } else {
+            console.log("Step 3 " + page);
+            if (page == null) {
+                page = new Page({
+                    name: "about",
+                    main_text: "Empty page"
+                });
+                page.save(function (err) {
+                    if (err) {
+                        console.log("Step 4");
+                    }
+                })
             }
-        })
+            console.log("Step 5");
+            res.render('admin/edit', {
+                scripts: [{
+                        src: "/javascripts/ckeditor/ckeditor.js"
+                    },
+                    {
+                        src: "/javascripts/admin/edit.js"
+                    }
+                ],
+                title: "Ціни на тури",
+                hidden_id: page._id,
+                main_text: page.main_text
+            });
+        }
     });
-    res.render('about');
 });
 
+router.post('/edit', function (req, res) {
+    console.log(req.body.hiddent_id);
+    Page.findByIdAndUpdate(req.body.hidden_id, {
+            $set: {
+                main_text: req.body.editor1
+            }
+        }, {
+            new: true
+        },
+        function (err, otherPage) {
+            if (err)
+                res.render('error');
+            else
+                res.redirect('/about');
+        });
+});
 
 module.exports = router;
