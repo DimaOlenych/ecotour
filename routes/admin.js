@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Page = require('../models/page');
+var Tour = require('../models/tour');
 
 router.get('/', function(req, res) {
     res.render('admin/index');
@@ -91,4 +92,31 @@ router.post('/edit', function(req, res) {
         });
 });
 
+
+router.get('/tours', function(req, res) {
+    // отримати з БД дані про тури
+    Tour.find({}, function(err, tours) {
+        if (err) {
+            // Error!!!!
+        } else {
+            res.render('admin/tours', { tours: tours });
+        }
+    });
+})
+
+router.get('/tour', function(req, res) {
+    if (req.query.action == "edit") {
+        Tour.findById(req.query.id, function(err, tour) {
+            if (err) {
+                // error
+            } else {
+                console.log(tour);
+                res.render('admin/tour', { tour: tour });
+            }
+        })
+    }
+    if (req.query.action == "delete") {
+
+    }
+});
 module.exports = router;
