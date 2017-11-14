@@ -177,23 +177,24 @@ router.get("/setup-db", function(req, res) {
 });
 
 router.get('/giftcards', function(req, res, next) {
-    res.render('/giftcards');
+    res.render('giftcards');
 });
 
 router.get('/tours_in_sell', function(req, res, next) {
-    res.render('/tours_in_sell');
+    res.render('tours_in_sell');
 });
 
 router.get('/virtualreality', function(req, res, next) {
-    res.render('/virtualreality');
+    res.render('virtualreality');
 });
 
-router.get('/autobus_tickets_online', function(req, res, next) {
-    res.render('/autobus_tickets_online');
+router.get('/autobus', function(req, res, next) {
+    res.render('autobus');
+
 });
 
 router.get('/employmentAbroad', function(req, res, next) {
-    res.render('/employmentAbroad');
+    res.render('employmentAbroad');
 });
 
 module.exports = router;
