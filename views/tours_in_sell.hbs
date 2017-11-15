@@ -1,80 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Туры в Расстрочку</title>
 </head>
 
- <header>
+<style>
+    #form-id {
+        background-color: orangered;
+        padding: 10px;
+        margin: auto
+    }
+    
+    #white_text {
+        color: white
+    }
+    
+    #btn-submit {
+        padding-right: 135px;
+        margin-top: 5px;
+    }
+    
+    #btn-submit2 {
+        padding-right: 120px;
+        margin-top: 10px;
+    }
+    
+    #h5-1,
+    #h1-1 {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    #placeholder {
+        margin: auto;
+    }
+    
+    #placeholder2 {
+        margin: auto;
+        padding-left: 250px;
+    }
+    
+    h5,
+    h1,
+    h6 {
+        color: orangered;
+        text-align: center;
+    }
+    
+    footer {
+        display: block;
+    }
+    
+    #footer {
+        background-color: #F8F8F9;
+    }
+    
+    #footer_h {
+        color: blue;
+        font-weight: bold;
+    }
+    
+    #left {
+        margin-top: 20px;
+    }
+    
+    #img-left {
+        margin-top: 20px;
+    }
+</style>
+
+<header>
+    <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-md-6 col-lg-12">
-                <img src="http://fakeimg.pl/400x100?text=1&font=lobster" alt="lobster">
-                <img src="http://fakeimg.pl/400x100?text=2&font=lobster" alt="lobster">
-                <img src="http://fakeimg.pl/400x100?text=3&font=lobster" alt="lobster">
+            <div>
+                <img src="http://fakeimg.pl/367x100?text=1&font=lobster" alt="lobster">
+                <img src="http://fakeimg.pl/367x100?text=2&font=lobster" alt="lobster">
+                <img src="http://fakeimg.pl/367x100?text=3&font=lobster" alt="lobster">
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
 <body>
-    <div class="container">
-          <div class="row">
-              <div class="row">
-  <div class="col-sm-4">
-      <div  class="form-group">
-                     <label for="">Введите Страну:</label>
-                    <p> <input type="text|password|email|number|submit|date|datetime|datetime-local|month|color|range|search|tel|time|url|week"
-                       class="form-control" name="" id="" aria-describedby="helpId" placeholder=""></p>
-                        <p> <input type="text"
-                           class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="Имя*:"></p>
-                                <p></p> <input type="number" name="phone" id="phone" class="form-control" placeholder="Телефон*:" aria-describedby="helpId"></p>
-                         </form>
-                         <p> <input type="email"
-                            class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="E-mail:"></p>
-                                                         <p><label for="comment">Отправить Заявку в Офис</label></p>
-                                <textarea class="form-control" rows="5" id="comment">Киев, пр-т. Победы 25
-М. Политехнический и-т
-+38(050)240-18-18
-+38(068)675-82-70
-+38(073)031-89-85</textarea>
-</div>
-</div>
-</p>
-</div>
-  <div class="col-sm-8"> <h1 style="color:orange">Cupidatat sunt magna officia fugiat magna labore.</h1>
 
-<h2>Замечательное предложение от сети агентств «Поехали с нами» для тех, кто желает совместить лучший отдых и удобную оплату!</h2>
+    <div id="red_back" class="container">
+        <h5 id="h5-1">Туры в рассрочку</h5>
+        <div class="row">
+            <div class="col-sm-3">
+                <h5>Заявка на подбор тура:</h5>
+                <form id="form-id">
+                    <div class="form-group">
+                        <label id="white_text" for="country">Выберите Страну:</label>
+                        <select class="form-control" id="contry">
+                                            <option>Украина</option>
+                                            <option>Россия</option>
+                                            <option>Молдова</option>
+                                            <option>Польща</option>
+                                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="Имя*:">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" name="tel" id="tel" aria-describedby="helpId" placeholder="Телефон*:">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="E-mail:">
+                    </div>
+                    <textarea name="fake-textarea" id="fake-textarea" cols="30" rows="5">
+Днепр, ул. Красная,15
++38(096)606-99-12
++38(066)915-34-41
+                    </textarea>
+                    <button id="btn-submit" class="btn btn-warning" type="submit">Отправить</button>
+                </form>
+                <div id="left">
+                    <form id="form-id">
+                        <div class="form-group">
+                            <label id="white_text" for="country">Оформить подписку</label>
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="E-mail:">
+                            <button id="btn-submit2" class="btn btn-warning" type="submit">Подписаться</button>
 
-<p>Теперь каждый турист может выбрать для себя наилучший тур и отправиться в путешествие, оплатив при этом лишь часть его стоимости (от 1/10 до 1/2 стоимости). Остаток стоимости Вы сможете оплачивать равными частями в течение следующих месяцев, в зависимости от выбранного Вами пакета.</p>
-<p>   Вам больше не придется собирать бесчисленное количество справок о доходах, сбережениях в банке, недвижимости, поручителях и прочих документов, а также ждать решения банка. <strong>Все, что Вам понадобится для получения рассрочки в «Поехали с нами» – это:</strong></p>
-<ul>
-    <li>копия паспорта </li>
-    <li>копия идентификационного кода.</li>
-</ul>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <img id="img-left" src='https://dummyimage.com/240x408.jpg?text=Tours' alt='' />
+                    <img id="img-left" src='https://dummyimage.com/240x408.jpg?text=NavBar' alt='' />
+                    <img id="img-left" src='https://dummyimage.com/240x708.jpg?text=Info' alt='' />
+                    <img id="img-left" src='https://dummyimage.com/240x308.jpg?text=Info2' alt='' />
+                </div>
+            </div>
 
-<p><strong>Кто может воспользоваться данным предложением?</strong></p>
-<p>Абсолютно каждый турист, у которого нет проблемных задолженностей по кредитам в украинских банках.Больше нет никаких ограничений.</p>
-<p><strong>Как приобрести тур в рассрочку?</strong></p>
-<p>Договор на туробслуживание в рассрочку Вы можете оформить в любом, удобном для вас офисе «Поехали с нами» по Украине. Наши менеджеры с радостью подберут для вас наилучший тур и подготовят договор. Для этого нужно:
+            <div class="col-sm-8">
+                <h1 id="h1-1">Отдыхайте выгодно вместе с «Поехали с нами»!</h1>
 
-1) Заполнить Анкету туриста (менеджер предоставит ее Вам сразу же после подбора тура)
+                <h2>Замечательное предложение от сети агентств «Поехали с нами» для тех, кто желает совместить лучший отдых и удобную оплату!</h2>
 
-2) Подписать дополнительное соглашение об оплате тура равными частями при оформлении договора на туробслуживание.
+                <p>Теперь каждый турист может выбрать для себя наилучший тур и отправиться в путешествие, оплатив при этом лишь часть его стоимости (от 1/10 до 1/2 стоимости). Остаток стоимости Вы сможете оплачивать равными частями в течение следующих месяцев,
+                    в зависимости от выбранного Вами пакета.</p>
+                <p> Вам больше не придется собирать бесчисленное количество справок о доходах, сбережениях в банке, недвижимости, поручителях и прочих документов, а также ждать решения банка. <strong>Все, что Вам понадобится для получения рассрочки в «Поехали с нами» – это:</strong></p>
+                <ul>
+                    <li>копия паспорта </li>
+                    <li>копия идентификационного кода.</li>
+                </ul>
 
-3) Оплатить первую часть стоимости тура (в зависимости от выбранного пакета)</p>
+                <p><strong>Кто может воспользоваться данным предложением?</strong></p>
+                <p>Абсолютно каждый турист, у которого нет проблемных задолженностей по кредитам в украинских банках.Больше нет никаких ограничений.</p>
+                <p><strong>Как приобрести тур в рассрочку?</strong></p>
+                <p>Договор на туробслуживание в рассрочку Вы можете оформить в любом, удобном для вас офисе «Поехали с нами» по Украине. Наши менеджеры с радостью подберут для вас наилучший тур и подготовят договор. Для этого нужно:
+                    <p> 1) Заполнить Анкету туриста (менеджер предоставит ее Вам сразу же после подбора тура) </p>
+                    <p> 2) Подписать дополнительное соглашение об оплате тура равными частями при оформлении договора на туробслуживание.</p>
+                    <p> 3) Оплатить первую часть стоимости тура (в зависимости от выбранного пакета)
+                    </p>
+                    <p><strong> Как оплачивается оставшаяся часть тура в рассрочку?</strong></p>
+                    <p> Равными частями до 20-го числа каждого месяца, согласно счета, который будет высылаться Вам по почте.</p>
+                    <p><strong> Где можно оформить тур в рассрочку?</strong></p>
 
+                    <p>О возможности приобретения туров по услуге рассрочки в том или ином офисе вы можете узнать по телефонам, указанным в разделе "Где купить":</p>
+                    <h6>Рассчитать полную стоимость тура в рассрочку</h6>
+                    <img id="placeholder" src="https://dummyimage.com/680x216.jpg?text=1" alt="">
+                    <h6 style="color:black"><strong>Как рассчитывается стоимость тура в рассрочку?</strong></h6>
+                    <img id="placeholder" src='https://dummyimage.com/596x418.png?text=Table%20Tour%20Count' alt='' />
 
-</div>
-</div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-        crossorigin="anonymous"></script>
-    <script src="/javascripts/lib.js"></script>  
+                    <p style="color:red"> *Пакет "Десять платежей" доступен для туристов, которые уже пользовались услугой покупки туров в рассрочку</p>
+                    <p><strong>Где можно оформить тур в рассрочку?</strong></p>
+
+                    <p></p>О возможности приобретения туров по услуге рассрочки в том или ином офисе вы можете узнать по телефонам, указанным в разделе "Где купить":</p>
+                <img id="placeholder2" src="https://www.poehalisnami.ua/Site/ContentData/Img/%D0%93%D0%B4%D0%B5%20%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C.png" alt="">
+            </div>
+        </div>
+    </div>
+
 </body>
 
 <footer>
+    <hr>
+    <div id="footer" class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <ul>
+                    <li id="footer_h">
+                        Куда поехать
+                    </li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl00_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/">Поиск тура</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl01_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/goryashie-turi">Горящие туры</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl02_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/hotels">Отели, гостиницы</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl03_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/countries">Страны, курорты</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl04_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/akcii">Акции</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl05_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/service/order/">Авиабилеты</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl06_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/visasupport">Медицинский туризм</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl07_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/children">Детский отдых</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl08_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/bolgariya">Болгария</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl09_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/greciya">Греция</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl10_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/egipet">Египет</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl11_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/ispaniya">Испания</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl12_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/kipr">Кипр</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl13_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/turciya">Турция</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl14_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/oae">Эмираты</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl15_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/office/dnepr">Где купить</a></li>
+
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <ul>
+                    <li id="footer_h">
+                        Туристам
+                    </li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl00_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tourist/insurance">Туристическое страхование</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl01_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tourist/credit">Туры в рассрочку</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl02_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tourist/autobus_tickets_online">Билеты на международные автобусы</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl03_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tourist/employmenteducationabroad">Трудоустройство и образование за рубежом</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl04_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/giftcards">Подарочные сертификаты</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl05_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/blog">Блог</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl06_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tourist/virtualreality">Виртуальная реальность: выбери свой тур</a></li>
+
+                </ul>
+            </div>
+
+            <div class="col-sm-2">
+                <ul>
+                    <li id="footer_h">
+                        Открыть агентство
+                    </li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl02_repInner_ctl00_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/open/mta/">Франчайзинг в туризме</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl02_repInner_ctl01_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/open/buy/presentation">Франчайзинговое  предложение</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl02_repInner_ctl02_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/open/buy/">Купить франшизу</a></li>
+
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <ul>
+                    <li id="footer_h">
+                        Работа за рубежом
+                    </li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl03_repInner_ctl00_hlLink" class="footer_menu" href="http://zakordonom.work">Работайте с нами</a></li>
+
+                </ul>
+
+                <ul>
+                    <li id="footer_h">
+                        О компании
+                    </li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl00_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/about/us">О нас</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl01_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/reviews">Отзывы о «Поехали с нами»</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl02_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/news">Новости компании</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl03_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/about/partners">Партнеры</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl04_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/about/reasons">9 причин поехать с нами</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl05_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/about/us/team">Наша команда</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl06_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/about/job">Работа у нас</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl07_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/open/courses/">Курсы менеджера по туризму</a></li>
+
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl08_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/partnership">Сотрудничество</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
-</html>     
+
+</html>
