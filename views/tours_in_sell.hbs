@@ -6,93 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Туры в Расстрочку</title>
+
+    <link rel="stylesheet" href="/stylesheets/tours.css">
 </head>
 
-<style>
-    #form-id {
-        background-color: orangered;
-        padding: 10px;
-        margin: auto
-    }
-    
-    #white_text {
-        color: white
-    }
-    
-    #btn-submit {
-        padding-right: 135px;
-        margin-top: 5px;
-    }
-    
-    #btn-submit2 {
-        padding-right: 120px;
-        margin-top: 10px;
-    }
-    
-    #h5-1,
-    #h1-1 {
-        text-align: center;
-        margin-top: 20px;
-    }
-    
-    #placeholder {
-        margin: auto;
-    }
-    
-    #placeholder2 {
-        margin: auto;
-        padding-left: 250px;
-    }
-    
-    h5,
-    h1,
-    h6 {
-        color: orangered;
-        text-align: center;
-    }
-    
-    footer {
-        display: block;
-    }
-    
-    #footer {
-        background-color: #F8F8F9;
-    }
-    
-    #footer_h {
-        color: blue;
-        font-weight: bold;
-    }
-    
-    #left {
-        margin-top: 20px;
-    }
-    
-    #img-left {
-        margin-top: 20px;
-    }
-</style>
-
-<header>
-    <div class="container">
-        <div class="row">
-            <div>
-                <img src="http://fakeimg.pl/367x100?text=1&font=lobster" alt="lobster">
-                <img src="http://fakeimg.pl/367x100?text=2&font=lobster" alt="lobster">
-                <img src="http://fakeimg.pl/367x100?text=3&font=lobster" alt="lobster">
-            </div>
-        </div>
-    </div>
-</header>
-
 <body>
-
-    <div id="red_back" class="container">
+        <div id="up-banners">
+                <img class="img-fluid" src="http://fakeimg.pl/367x100?text=1&font=lobster" alt="lobster">
+                <img class="img-fluid" src="http://fakeimg.pl/367x100?text=2&font=lobster" alt="lobster">
+                <img class="img-fluid" src="http://fakeimg.pl/367x100?text=3&font=lobster" alt="lobster">
+        </div>
+       
         <h5 id="h5-1">Туры в рассрочку</h5>
         <div class="row">
-            <div class="col-sm-3">
+            <div id="left-side" class="col-sm-3">
                 <h5>Заявка на подбор тура:</h5>
-                <form id="form-id">
+                <form id="tour-form">
                     <div class="form-group">
                         <label id="white_text" for="country">Выберите Страну:</label>
                         <select class="form-control" id="contry">
@@ -112,15 +41,15 @@
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="E-mail:">
                     </div>
                     <input type="checkbox" name="checkbox" id="checkbox"><label id="white_text" for="checkbox">&nbsp;Подписаться на Рассылку</label>
-                    <textarea name="fake-textarea" id="fake-textarea" cols="30" rows="5" readonly>
+                    <textarea name="textarea" id="textarea" cols="30" rows="4" readonly>
 Днепр, ул. Красная,15
 +38(096)606-99-12
 +38(066)915-34-41
                     </textarea>
                     <button id="btn-submit" class="btn btn-warning" type="submit">Отправить</button>
                 </form>
-                <div id="left">
-                    <form id="form-id">
+                <div id="side-mail">
+                    <form id="email-form">
                         <div class="form-group">
                             <label id="white_text" for="country">Оформить подписку</label>
                             <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="E-mail:">
@@ -129,15 +58,15 @@
                         </div>
                     </form>
                 </div>
-                <div>
-                    <img id="img-left" src='https://dummyimage.com/240x408.jpg?text=Tours' alt='' />
-                    <img id="img-left" src='https://dummyimage.com/240x408.jpg?text=NavBar' alt='' />
-                    <img id="img-left" src='https://dummyimage.com/240x708.jpg?text=Info' alt='' />
-                    <img id="img-left" src='https://dummyimage.com/240x308.jpg?text=Info2' alt='' />
+                <div id="side-banners">
+                    <img class="img-fluid" src='https://dummyimage.com/240x408.jpg?text=Tours' alt='' />
+                    <img class="img-fluid" src='https://dummyimage.com/240x408.jpg?text=NavBar' alt='' />
+                    <img class="img-fluid" src='https://dummyimage.com/240x708.jpg?text=Info' alt='' />
+                    <img class="img-fluid" src='https://dummyimage.com/240x308.jpg?text=Info2' alt='' />
                 </div>
             </div>
 
-            <div class="col-sm-8">
+            <div class="col-sm-9">
                 <h1 id="h1-1">Отдыхайте выгодно вместе с «Поехали с нами»!</h1>
 
                 <h2>Замечательное предложение от сети агентств «Поехали с нами» для тех, кто желает совместить лучший отдых и удобную оплату!</h2>
@@ -165,10 +94,10 @@
 
                     <p>О возможности приобретения туров по услуге рассрочки в том или ином офисе вы можете узнать по телефонам, указанным в разделе "Где купить":</p>
                     <h6>Рассчитать полную стоимость тура в рассрочку</h6>
-                    <img id="placeholder" src="https://dummyimage.com/680x216.jpg?text=1" alt="">
+                    <img id="body-banner" src="https://dummyimage.com/680x216.jpg?text=1" alt="">
                     <h6 style="color:black"><strong>Как рассчитывается стоимость тура в рассрочку?</strong></h6>
-                    <table class="MsoNormalTable" style="border-collapse: collapse; width: 596px; height: 422px;" border="0" cellspacing="0" cellpadding="0">
-<tbody>
+                    <table id="table1" style="border-collapse: collapse; width: 596px; height: 422px;" border="0" cellspacing="0" cellpadding="0">
+<tbody >
 <tr style="height: 48.0pt;">
 <td style="width: 77.0pt; height: 48.0pt; border: 1.0pt solid windowtext; background: #F4A352; padding: .75pt .75pt 0cm .75pt;" width="103">
 <p  style="margin-bottom: .0001pt; text-align: center; line-height: normal;" align="center"><strong> <em> <span style="font-size: 12.0pt; color: black;">Пакет</span> </em> </strong></p>
@@ -265,126 +194,123 @@
                     <p><strong>Где можно оформить тур в рассрочку?</strong></p>
 
                     <p></p>О возможности приобретения туров по услуге рассрочки в том или ином офисе вы можете узнать по телефонам, указанным в разделе "Где купить":</p>
-                <img id="placeholder2" src="https://www.poehalisnami.ua/Site/ContentData/Img/%D0%93%D0%B4%D0%B5%20%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C.png" alt="">
+                <img id="buy-button" src="https://www.poehalisnami.ua/Site/ContentData/Img/%D0%93%D0%B4%D0%B5%20%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C.png" alt="">
             </div>
         </div>
-    </div>
 
 </body>
 
 <footer>
-    <hr>
-    <div id="footer" class="container">
         <div class="row">
-            <div class="col-sm-3">
+            <div id="footer-left" class="col-sm-3">
                 <ul>
-                    <li id="footer_h">
+                    <li id="footer-head">
                         Куда поехать
                     </li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl00_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/">Поиск тура</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl00_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tour/">Поиск тура</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl01_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/goryashie-turi">Горящие туры</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl01_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/goryashie-turi">Горящие туры</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl02_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/hotels">Отели, гостиницы</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl02_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/hotels">Отели, гостиницы</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl03_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/countries">Страны, курорты</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl03_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/countries">Страны, курорты</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl04_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/akcii">Акции</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl04_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/akcii">Акции</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl05_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/service/order/">Авиабилеты</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl05_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/service/order/">Авиабилеты</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl06_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/visasupport">Медицинский туризм</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl06_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/visasupport">Медицинский туризм</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl07_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/children">Детский отдых</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl07_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tour/children">Детский отдых</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl08_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/bolgariya">Болгария</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl08_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tour/bolgariya">Болгария</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl09_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/greciya">Греция</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl09_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tour/greciya">Греция</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl10_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/egipet">Египет</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl10_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tour/egipet">Египет</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl11_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/ispaniya">Испания</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl11_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tour/ispaniya">Испания</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl12_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/kipr">Кипр</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl12_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tour/kipr">Кипр</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl13_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/turciya">Турция</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl13_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tour/turciya">Турция</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl14_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tour/oae">Эмираты</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl14_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tour/oae">Эмираты</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl15_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/office/dnepr">Где купить</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl00_repInner_ctl15_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/office/dnepr">Где купить</a></li>
 
                 </ul>
             </div>
-            <div class="col-sm-3">
+            <div id="footer-midle-left" class="col-sm-3">
                 <ul>
-                    <li id="footer_h">
+                    <li id="footer-head">
                         Туристам
                     </li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl00_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tourist/insurance">Туристическое страхование</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl00_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tourist/insurance">Туристическое страхование</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl01_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tourist/credit">Туры в рассрочку</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl01_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tourist/credit">Туры в рассрочку</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl02_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tourist/autobus_tickets_online">Билеты на международные автобусы</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl02_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tourist/autobus_tickets_online">Билеты на международные автобусы</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl03_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tourist/employmenteducationabroad">Трудоустройство и образование за рубежом</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl03_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tourist/employmenteducationabroad">Трудоустройство и образование за рубежом</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl04_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/giftcards">Подарочные сертификаты</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl04_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/giftcards">Подарочные сертификаты</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl05_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/blog">Блог</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl05_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/blog">Блог</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl06_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/tourist/virtualreality">Виртуальная реальность: выбери свой тур</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl01_repInner_ctl06_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/tourist/virtualreality">Виртуальная реальность: выбери свой тур</a></li>
 
                 </ul>
             </div>
 
-            <div class="col-sm-2">
+            <div id="footer-midle-right" class="col-sm-2">
                 <ul>
-                    <li id="footer_h">
+                    <li id="footer-head">
                         Открыть агентство
                     </li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl02_repInner_ctl00_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/open/mta/">Франчайзинг в туризме</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl02_repInner_ctl00_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/open/mta/">Франчайзинг в туризме</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl02_repInner_ctl01_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/open/buy/presentation">Франчайзинговое  предложение</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl02_repInner_ctl01_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/open/buy/presentation">Франчайзинговое  предложение</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl02_repInner_ctl02_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/open/buy/">Купить франшизу</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl02_repInner_ctl02_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/open/buy/">Купить франшизу</a></li>
 
                 </ul>
             </div>
-            <div class="col-sm-4">
+            <div id="footer-right" class="col-sm-4">
                 <ul>
-                    <li id="footer_h">
+                    <li id="footer-head">
                         Работа за рубежом
                     </li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl03_repInner_ctl00_hlLink" class="footer_menu" href="http://zakordonom.work">Работайте с нами</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl03_repInner_ctl00_hlLink" class="footer-menu" href="http://zakordonom.work">Работайте с нами</a></li>
 
                 </ul>
 
                 <ul>
-                    <li id="footer_h">
+                    <li id="footer-head">
                         О компании
                     </li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl00_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/about/us">О нас</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl00_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/about/us">О нас</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl01_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/reviews">Отзывы о «Поехали с нами»</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl01_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/reviews">Отзывы о «Поехали с нами»</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl02_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/news">Новости компании</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl02_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/news">Новости компании</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl03_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/about/partners">Партнеры</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl03_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/about/partners">Партнеры</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl04_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/about/reasons">9 причин поехать с нами</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl04_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/about/reasons">9 причин поехать с нами</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl05_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/about/us/team">Наша команда</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl05_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/about/us/team">Наша команда</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl06_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/about/job">Работа у нас</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl06_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/about/job">Работа у нас</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl07_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/open/courses/">Курсы менеджера по туризму</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl07_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/open/courses/">Курсы менеджера по туризму</a></li>
 
-                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl08_hlLink" class="footer_menu" href="https://www.poehalisnami.ua/partnership">Сотрудничество</a></li>
+                    <li><a id="ctl00_ctl00_ctl00_ctl00_ctl00_center_ucFooter_repOuter_ctl04_repInner_ctl08_hlLink" class="footer-menu" href="https://www.poehalisnami.ua/partnership">Сотрудничество</a></li>
 
                 </ul>
             </div>

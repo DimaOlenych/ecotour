@@ -1,0 +1,108 @@
+/* CSS Styles */
+
+#tour-form,
+#email-form {
+    background-color: orangered;
+    padding: 10px;
+    margin: auto
+}
+
+#white_text {
+    color: white
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+#btn-submit {
+    padding-right: auto;
+    margin-top: 5px;
+}
+
+#btn-submit2 {
+    padding-right: auto;
+    margin-top: 10px;
+}
+
+#textarea {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+#h5-1,
+#h1-1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table1 {
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+#body-banner {
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+#buy-button {
+    margin: auto;
+    padding-left: 250px;
+}
+
+h5,
+h1,
+h6 {
+    color: orangered;
+    text-align: center;
+}
+
+#footer-head {
+    color: blue;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #F8F8F9;
+    display: block;
+    margin-top: 20px;
+}
+
+#side-mail {
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+
+/* Print Rules */
+
+@media print {
+    #side-banners,
+    #up-banners,
+    #left-side,
+    footer,
+    #body-banner,
+    #buy-button {
+        display: none;
+    }
+}
+
+
+/* Spech Rules */
+
+@media Spech {
+    #side-banners,
+    #up-banners,
+    #left-side,
+    #body-banner,
+    #buy-button {
+        display: none;
+    }
+}
