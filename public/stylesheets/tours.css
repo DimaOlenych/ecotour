@@ -4,7 +4,12 @@
 #email-form {
     background-color: orangered;
     padding: 10px;
-    margin: auto
+}
+
+#side-mail {
+    margin: 10px 0px;
+    max-width: auto;
+    height: auto;
 }
 
 #white_text {
@@ -20,17 +25,20 @@
 #btn-submit {
     padding-right: auto;
     margin-top: 5px;
+    max-width: 100%;
+    height: auto;
 }
 
 #btn-submit2 {
     padding-right: auto;
     margin-top: 10px;
+    max-width: 100%;
+    height: auto;
 }
 
 #textarea {
     max-width: 100%;
     height: auto;
-    margin: auto;
 }
 
 #h5-1,
@@ -40,20 +48,14 @@
 }
 
 table1 {
-    margin: auto;
     max-width: 100%;
     height: auto;
 }
 
 #body-banner {
-    margin: auto;
     max-width: 100%;
     height: auto;
-}
-
-#buy-button {
-    margin: auto;
-    padding-left: 250px;
+    padding-left: 50px
 }
 
 h5,
@@ -72,12 +74,7 @@ footer {
     background-color: #F8F8F9;
     display: block;
     margin-top: 20px;
-}
-
-#side-mail {
-    margin: auto;
-    width: auto;
-    height: auto;
+    border: 1px solid #CACACC;
 }
 
 
@@ -105,4 +102,35 @@ footer {
     #buy-button {
         display: none;
     }
+}
+
+
+/* Font Rules */
+
+
+/* @import url('https://fonts.googleapis.com/css?family=Lobster|Oswald|Rubik+Mono+One|Russo+One'); 
+ Почему-то не работает.
+ */
+
+
+/* 
+font-family: 'Oswald', sans-serif; // used
+font-family: 'Lobster', cursive;
+font-family: 'Rubik Mono One', sans-serif;
+font-family: 'Russo One', sans-serif; // used
+font-family: 'Oranienbaum', serif; // used
+*/
+
+#main-question {
+    font-family: 'Oranienbaum', serif;
+}
+
+h5,
+h1,
+h6 {
+    font-family: 'Russo One', sans-serif;
+}
+
+#footer-head {
+    font-family: 'Oswald', sans-serif;
 }
