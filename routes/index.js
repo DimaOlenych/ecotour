@@ -175,32 +175,4 @@ router.get("/setup-db", function(req, res) {
         }
     });
 });
-
-router.get('/giftcards', function(req, res, next) {
-    res.render('giftcards');
-});
-
-router.get('/tours_in_sell', function(req, res, next) {
-    var styles = [{
-        href: "stylesheets/tours.css"
-    }];
-    res.render('tours_in_sell', {
-        styles: styles
-    });
-
-});
-
-router.get('/virtualreality', function(req, res, next) {
-    res.render('virtualreality');
-});
-
-router.get('/autobus', function(req, res, next) {
-    res.render('autobus');
-
-});
-
-router.get('/employmentAbroad', function(req, res, next) {
-    res.render('employmentAbroad')
-});
-
 module.exports = router;
