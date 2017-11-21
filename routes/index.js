@@ -181,7 +181,13 @@ router.get('/giftcards', function(req, res, next) {
 });
 
 router.get('/tours_in_sell', function(req, res, next) {
-    res.render('tours_in_sell');
+    var styles = [{
+        href: "stylesheets/tours.css"
+    }];
+    res.render('tours_in_sell', {
+        styles: styles
+    });
+
 });
 
 router.get('/virtualreality', function(req, res, next) {
@@ -194,7 +200,7 @@ router.get('/autobus', function(req, res, next) {
 });
 
 router.get('/employmentAbroad', function(req, res, next) {
-    res.render('employmentAbroad');
+    res.render('employmentAbroad')
 });
 
 module.exports = router;
