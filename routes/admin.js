@@ -3,15 +3,23 @@ var router = express.Router();
 var Page = require('../models/page');
 var Tour = require('../models/tour');
 
-router.get('/', function(req, res) {
+function renderError(err) {
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
+}
+
+router.get('/', function (req, res) {
     res.render('admin/index');
 });
 
-router.get('/edit', function(req, res) {
+router.get('/edit', function (req, res) {
     console.log("Step 1");
     Page.findOne({
         name: req.query.name
-    }, function(err, page) {
+    }, function (err, page) {
         console.log("Step 2");
         if (err) {
             res.locals.message = err.message;
@@ -26,7 +34,7 @@ router.get('/edit', function(req, res) {
                     name: req.query.name,
                     main_text: "Empty page"
                 });
-                page.save(function(err) {
+                page.save(function (err) {
                     if (err) {
                         console.log("Step 4");
                         res.locals.message = err.message;
@@ -71,7 +79,7 @@ router.get('/edit', function(req, res) {
     });
 });
 
-router.post('/edit', function(req, res) {
+router.post('/edit', function (req, res) {
     console.log(req.body.hidden_id);
     Page.findByIdAndUpdate(req.body.hidden_id, {
             $set: {
@@ -80,7 +88,7 @@ router.post('/edit', function(req, res) {
         }, {
             new: true
         },
-        function(err, otherPage) {
+        function (err, otherPage) {
             if (err) {
                 res.locals.message = err.message;
                 res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -93,27 +101,21 @@ router.post('/edit', function(req, res) {
 });
 
 
-router.get('/tours', function(req, res) {
-    // отримати з БД дані про тури
-    Tour.find({}, function(err, tours) {
-        if (err) {
-            // Error!!!!
-        } else {
-            res.render('admin/tours', { tours: tours });
-        }
-    });
+router.get('/tours', function (req, res) {
+    Tour.find()
+        .then(tours => res.render('admin/tours', {
+            tours: tours
+        }))
+        .catch( err => renderError(err));
 })
 
-router.get('/tour', function(req, res) {
+router.get('/tour', function (req, res) {
     if (req.query.action == "edit") {
-        Tour.findById(req.query.id, function(err, tour) {
-            if (err) {
-                // error
-            } else {
-                console.log(tour);
-                res.render('admin/tour', { tour: tour });
-            }
-        })
+        Tour.findById(req.query.id)
+            .then(tour => res.render('admin/tour', {
+                tour: tour
+            }))
+            .catch( err=> renderError(err));
     }
     if (req.query.action == "delete") {
 

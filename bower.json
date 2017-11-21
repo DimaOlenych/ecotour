@@ -1,0 +1,25 @@
+{
+  "name": "ecotour",
+  "description": "Demo",
+  "main": "app.js",
+  "authors": [
+    "A.Andruhovski"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "demo"
+  ],
+  "homepage": "https://github.com/andruhovski/ecotour",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "ckeditor": "#full/4.3.3",
+    "flag-icons": "1.0.2"
+  }
+}

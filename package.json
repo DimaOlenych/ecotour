@@ -1,32 +1,35 @@
 {
-    "name": "ecotour",
-    "version": "0.0.9",
-    "private": true,
-    "scripts": {
-        "start": "NODE_ENV=production node ./bin/www",
-        "dev": "nodemon ./bin/www"
-    },
-    "dependencies": {
-        "body-parser": "~1.18.2",
-        "cookie-parser": "~1.4.3",
-        "debug": "~2.6.9",
-        "express": "~4.15.5",
-        "hbs": "~4.0.1",
-        "morgan": "~1.9.0",
-        "serve-favicon": "~2.4.5",
-        "flag-icons": "1.0.2",
-        "mongoose": "4.13.0"
-    },
-    "author": "A.Andruhovski",
-    "license": "ISC",
-    "description": "Demo",
-    "main": "app.js",
-    "keywords": [
-        "demo"
-    ],
-    "devDependencies": {
-        "browser-sync": "^2.18.13",
-        "connect-browser-sync": "^2.1.0",
-        "nodemon": "^1.12.1"
-    }
+  "name": "ecotour",
+  "version": "0.0.9",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=production node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "hbs": "~4.0.1",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5",
+    "mongoose": "4.13.0"
+  },
+  "author": "A.Andruhovski",
+  "license": "ISC",
+  "description": "Demo",
+  "main": "app.js",
+  "keywords": [
+    "demo"
+  ],
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "connect-browser-sync": "^2.1.0",
+    "grunt": "^1.0.1",
+    "grunt-eslint": "^20.1.0",
+    "grunt-exec": "^3.0.0",
+    "load-grunt-tasks": "^3.5.2",
+    "nodemon": "^1.12.1"
+  }
 }
