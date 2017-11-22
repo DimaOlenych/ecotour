@@ -94,6 +94,7 @@ router.post('/edit', function(req, res) {
 
 
 router.get('/tours', function(req, res) {
+    var styles = [{ href: "/stylesheets/tour.css" }];
     // отримати з БД дані про тури
     Tour.find({}, function(err, tours) {
         if (err) {
@@ -105,6 +106,7 @@ router.get('/tours', function(req, res) {
         } else {
             res.render('admin/tours', {
                 tours: tours,
+                styles: styles,
                 scripts: [{
                         src: "/javascripts/admin/tours.js"
                     },
