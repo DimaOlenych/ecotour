@@ -1,18 +1,26 @@
-{{!-- <div class="row">
-    <div class="col-md-12">
-        <button>Add New</button>
+
+
+<div class="row">
+    <div class="col-md-1">
+        &nbsp;
     </div>
-</div>         --}}
+    <div class="col-md-10">
+        <a href="./tour?action=new" style="width:100%" class="btn btn-success">Додати тур</a>
+    </div>
+    <div class="col-md-1">
+        &nbsp;
+    </div>
+</div>        
 <div class="row">
     <div class="col-md-12">
-        <table class="table table-stripped">
-            <thead>
+        <table class="table tablesorter" id="tourstable">
+            <thead class="thead-inverse">
                 <tr>
-                    <th>Назва туру</th>
-                    <th>Ціна</th>
-                    <th>Днів</th>
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
+                    <th class="table_header">Назва туру</th>
+                    <th class="table_header">Ціна</th>
+                    <th class="table_header">Днів</th>
+                    <th class="table_header">&nbsp;</th>
+                    <th class="table_header">&nbsp;</th>
                 </tr>
             </thead>
             <tbody>

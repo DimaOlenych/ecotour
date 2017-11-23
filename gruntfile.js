@@ -7,7 +7,7 @@ module.exports = function (grunt) {
         },
         exec: {
             linkchecker: {
-                cmd: 'C:\\Program Files (x86)\\LinkChecker\\linkchecker http://localhost:3000'
+                cmd: '"C:\\Program Files (x86)\\LinkChecker\\linkchecker" http://localhost:3000'
             }
         }
     });
