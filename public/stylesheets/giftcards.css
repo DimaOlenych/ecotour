@@ -1,0 +1,29 @@
+@media print {
+    #tour,
+    #footer_menu,
+    footer,
+    #bannrer,
+    .img-fluid,
+    #btnShow {
+        display: none
+    }
+}
+
+#tour {
+    background-color: orangered;
+    padding: 5px;
+    margin: auto;
+}
+
+#footer_menu {
+    background-color: white;
+    color: rgb(0, 153, 255)
+}
+
+li a {
+    font-size: 13px;
+    display: block;
+    color: black;
+    text-align: left;
+    text-decoration: none;
+}
