@@ -105,6 +105,9 @@ router.get('/tours', function(req, res) {
         } else {
             res.render('admin/tours', {
                 tours: tours,
+                styles: styles = [{
+                    href: "/stylesheets/tour.css"
+                }],
                 scripts: [{
                         src: "/javascripts/admin/tours.js"
                     },
