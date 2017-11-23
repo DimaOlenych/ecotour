@@ -78,20 +78,6 @@ footer {
 }
 
 
-/* Print Rules */
-
-@media print {
-    #side-banners,
-    #up-banners,
-    #left-side,
-    footer,
-    #body-banner,
-    #buy-button {
-        display: none;
-    }
-}
-
-
 /* Spech Rules */
 
 @media Spech {
