@@ -1,3 +1,14 @@
+@media print {
+    #tour,
+    #footer_menu,
+    footer,
+    #bannrer,
+    .img-fluid,
+    #btnShow {
+        display: none
+    }
+}
+
 #tour {
     background-color: orangered;
     padding: 5px;

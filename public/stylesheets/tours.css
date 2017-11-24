@@ -78,9 +78,23 @@ footer {
 }
 
 
-/* Spech Rules */
+/* Print Rules  */
 
-@media Spech {
+@media print {
+    #side-banners,
+    #up-banners,
+    #left-side,
+    footer,
+    #body-banner,
+    #buy-button {
+        display: none;
+    }
+}
+
+
+/* Speech Rules */
+
+@media Speech {
     #side-banners,
     #up-banners,
     #left-side,
