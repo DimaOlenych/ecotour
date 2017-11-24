@@ -78,7 +78,7 @@ footer {
 }
 
 
-/* Print Rules */
+/* Print Rules  */
 
 @media print {
     #side-banners,
@@ -92,9 +92,9 @@ footer {
 }
 
 
-/* Spech Rules */
+/* Speech Rules */
 
-@media Spech {
+@media Speech {
     #side-banners,
     #up-banners,
     #left-side,

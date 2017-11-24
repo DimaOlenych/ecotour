@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         eslint: {
-            target: ['file.js']
+            target: ['app.js', 'routes/*.js']
         },
         exec: {
             linkchecker: {

@@ -1,5 +1,6 @@
+{{#section 'head'}}
 
-
+{{/section}}
 <div class="row">
     <div class="col-md-1">
         &nbsp;
@@ -16,6 +17,7 @@
         <table class="table tablesorter" id="tourstable">
             <thead class="thead-inverse">
                 <tr>
+                    <th class="table_header">Id</th>
                     <th class="table_header">Назва туру</th>
                     <th class="table_header">Ціна</th>
                     <th class="table_header">Днів</th>
@@ -24,16 +26,34 @@
                 </tr>
             </thead>
             <tbody>
-                {{#tours}}
-                <tr>
-                    <td>{{country_uk}}</td>
-                    <td>{{price}}</td>
-                    <td>{{days}}</td>
-                    <td class="col-btn"><a href="./tour?action=edit&id={{_id}}" class="btn btn-primary">Ред.</a></td>
-                    <td class="col-btn"><a href="./tour?action=delete&id={{_id}}" class="btn btn-danger">Вид.</a></td>
-                </tr>
-                {{/tours}}
+                
             </tbody>
         </table>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#section 'scripts'}}
+<script src="/vendor/jquery.tablesorter/dist/js/jquery.tablesorter.min.js"></script>
+<script src="/javascripts/admin/tours.js"></script>
+{{/section}}

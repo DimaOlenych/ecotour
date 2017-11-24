@@ -71,9 +71,13 @@ router.get('/contact', function(req, res, next) {
     var scripts = [{
         src: "/javascripts/contact.js"
     }];
+    var styles = [{
+        href: "/stylesheets/giftcards.css"
+    }];
     res.render('contact', {
         title: 'Контакти',
-        scripts: scripts
+        scripts: scripts,
+        styles: styles
     });
 });
 
@@ -175,4 +179,28 @@ router.get("/setup-db", function(req, res) {
         }
     });
 });
+
+router.get('/giftcards', function(req, res, next) {
+    res.render('giftcards');
+});
+
+router.get('/tours_in_sell', function(req, res, next) {
+    res.render('tours_in_sell', {
+        styles: [{ href: "/stylesheets/tours.css" }]
+    });
+});
+
+router.get('/virtualreality', function(req, res, next) {
+    res.render('virtualreality');
+});
+
+router.get('/autobus', function(req, res, next) {
+    res.render('autobus');
+
+});
+
+router.get('/employmentAbroad', function(req, res, next) {
+    res.render('employmentAbroad');
+});
+
 module.exports = router;

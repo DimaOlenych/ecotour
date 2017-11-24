@@ -19,7 +19,8 @@
   ],
   "dependencies": {
     "jquery": "^3.2.1",
+    "jquery.tablesorter":"latest",
     "ckeditor": "#full/4.3.3",
-    "flag-icons": "1.0.2"
+    "flag-icons": "*"
   }
 }
