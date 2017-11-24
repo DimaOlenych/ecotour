@@ -155,16 +155,16 @@ router.get("/setup-db", function(req, res) {
 
     Tour.remove({}, function(err) {
         if (err) {
-            console.log(err)
+            console.log(err);
         }
         Tour.insertMany(tours, function(err, docs) {
             if (err) {
-                console.log(err)
+                console.log(err);
             }
             res.status(200).json({
                 message: "Ok"
             });
-        })
+        });
     });
 
     page = new Page({
@@ -173,7 +173,7 @@ router.get("/setup-db", function(req, res) {
     });
     page.save(function(err) {
         if (err) {
-            console.error(err)
+            console.error(err);
         } else {
             console.log("Yes");
         }

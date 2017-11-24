@@ -1,7 +1,10 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 
     grunt.initConfig({
+        htmllint: {
+            all: ['views/layouts/layout.hbs']
+        },
         eslint: {
             target: ['app.js', 'routes/*.js']
         },
@@ -12,5 +15,5 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('default', ['eslint', 'exec']);
+    grunt.registerTask('default', ['htmllint', 'eslint', 'exec']);
 }

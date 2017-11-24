@@ -14,12 +14,12 @@ router.route('/page/:pageId')
     .put(pagesController.update)
     .delete(pagesController.delete);
 
-// pages Routes
+// tours Routes
 router.route('/tours')
     .get(toursController.all)
     .post(toursController.createTour);
 
-router.route('/tour/:tourId')
+router.route('/tour/:tourId') // /tour/123456 ->req.params.tourId
     .get(toursController.read)
     .put(toursController.update)
     .delete(toursController.delete);

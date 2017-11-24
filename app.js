@@ -13,17 +13,16 @@ var mongoose = require('mongoose');
 
 var app = express();
 
-var express = require('express');
-var express_handlebars  = require('express-handlebars');
-var express_handlebars_sections = require('express-handlebars-sections');
- 
-var app = express();
- 
-let hbs = express_handlebars.create({
-    defaultLayout:'layout',
-    // properties used by express-handlebars configuration ... 
+var  express  =  require('express');
+var  express_handlebars   =  require('express-handlebars');
+var  express_handlebars_sections  =  require('express-handlebars-sections'); 
+var  app  =  express(); 
+let  hbs  =  express_handlebars.create({
+    defaultLayout: 'layout',
+         // properties used by express-handlebars configuration ... 
     extname: '.hbs'
 });
+
 express_handlebars_sections(hbs);   
 // CONFIGURE 'express_handlebars_sections' 
  
@@ -68,14 +67,14 @@ app.use('/api/v1', apiV1);
 //app.use('/users', users);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
