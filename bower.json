@@ -1,26 +1,28 @@
 {
-  "name": "ecotour",
-  "description": "Demo",
-  "main": "app.js",
-  "authors": [
-    "A.Andruhovski"
-  ],
-  "license": "ISC",
-  "keywords": [
-    "demo"
-  ],
-  "homepage": "https://github.com/andruhovski/ecotour",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "jquery": "^3.2.1",
-    "jquery.tablesorter":"latest",
-    "ckeditor": "#full/4.3.3",
-    "flag-icons": "*"
-  }
+    "name": "ecotour",
+    "description": "Demo",
+    "main": "app.js",
+    "authors": [
+        "A.Andruhovski"
+    ],
+    "license": "ISC",
+    "keywords": [
+        "demo"
+    ],
+    "homepage": "https://github.com/andruhovski/ecotour",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "^3.2.1",
+        "jquery.tablesorter": "latest",
+        "ckeditor": "#full/4.3.3",
+        "flag-icons": "*"
+            // Problem
+            // ,"bootstrap": "latest"
+    }
 }
