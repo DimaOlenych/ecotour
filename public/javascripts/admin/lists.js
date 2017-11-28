@@ -1,39 +1,43 @@
 $(function() {
-    $("#tourstable").tablesorter({
+    $("#liststable").tablesorter({
         headers: {
             // assign the secound column (we start counting zero) 
-            4: {
+            5: {
                 // disable it by setting the property sorter to false 
                 sorter: false
             },
             // assign the third column (we start counting zero) 
-            5: {
+            6: {
                 // disable it by setting the property sorter to false 
                 sorter: false
             }
         }
     });
 
-    $.getJSON("/api/v1/tours", function(data) {
-        $('#tourstable tbody').append(
+    $.getJSON("/api/v1/lists", function(data) {
+        $('#liststable tbody').append(
             $.map(data, function(item, index) {
-                let dataStr = `<td>${item._id}</td><td>${item.country_uk}</td><td>${item.price}</td><td>${item.days}</td>`;
+                let dataStr = `<td>${item._id}</td><td>${item.company}</td><td>${item.representative}</td><td>${item.adress}</td><td>${item.valid}</td>`;
                 let btnStr1 = `<td><button type="button" data-id="${item._id}" class="btn btn-default edtButton">Edit</button></td>`;
                 let btnStr2 = `<td><button type="button" data-id="${item._id}" class="btn btn-default delButton">Delete</button></td>`;
                 return "<tr>" + dataStr + btnStr1 + btnStr2 + "</tr>";
             }).join());
 
-        $("#tourstable").trigger("update"); 
+        $("#liststable").trigger("update"); 
 
         $('button.edtButton').on('click', function() {
             var id = $(this).attr('data-id');
-            var myModal = $('#myModal');
+            var myModal = $('#ListModal');
 
-            $.getJSON(`/api/v1/tour/${id}`, function(data) {
+            $.getJSON(`/api/v1/list/${id}`, function(data) {
                 console.log(data);
-                $('#dlgCountry').html(data.country_uk);
-                $('#dlgDays').html(data.days);
-                $('#dlgPrice').html(data.price);
+                // Problem: 
+                // Uncaught TypeError: Cannot read property 'company' of null
+                // at Object.success (lists.js:34)
+                $('#dlgCompany').html(data.company);
+                $('#dlgRepresentative').html(data.representative);
+                $('#dlgAdress').html(data.adress);
+                $('#dlgValid').html(data.valid);
             });
 
             // and finally show the modal

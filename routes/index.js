@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Tour = require('../models/tour');
 var Page = require('../models/page');
+var List = require('../models/list');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -120,6 +121,33 @@ router.get("/prices", function(req, res) {
     });
 });
 
+router.get("/list", function(req, res) {
+    List.find({}, function(err, lists) {
+        if (err) {
+            res.locals.message = err.message;
+            res.locals.error = req.app.get('env') === 'development' ? err : {};
+            // render the error page
+            res.status(err.status || 500);
+            res.render('error');
+        }
+        if (lists == null) {
+            lists = {
+                company: "Roshen",
+                representative: "І.І. Молочний",
+                adress: "Кам-Под, Пушкіньска 43",
+                valid: "Червень 2018"
+            };
+        }
+        res.render("list", {
+            title: "Список",
+            lists: lists,
+            scripts: [{
+                src: "/javascripts/list.js"
+            }]
+        });
+    });
+});
+
 router.get("/setup-db", function(req, res) {
     var tours = [{
             country_en: "Egypt",
@@ -167,6 +195,47 @@ router.get("/setup-db", function(req, res) {
         });
     });
 
+    var lists = [{
+            company: "Roshen",
+            representative: "І.І. Молочний",
+            adress: "Кам-Под, Пушкіньска 43",
+            valid: "Червень 2018"
+        },
+        {
+            company: "Nescafe",
+            representative: "Д.Б. Кавовар",
+            adress: "Кам-Под, Тарасова 15",
+            valid: "Серпень 2020"
+        },
+        {
+            company: "Пчілка",
+            representative: "О.О. Медовик",
+            adress: "Кам-Под, Центральна 8",
+            valid: "Травень 2024"
+        },
+        {
+            company: "ABK",
+            representative: "Кам-Под, Лесі Українки 14",
+            adress: "Кам-Под, Лесі Українки 14",
+            valid: "Листопад 2019"
+        }
+    ];
+
+    list.remove({}, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        List.insertMany(lists, function(err, docs2) {
+            if (err) {
+                console.log(err);
+            }
+            res.status(200).json({
+                message: "Okey",
+
+            });
+        });
+    });
+
     page = new Page({
         name: "about",
         main_text: "Empty page"
@@ -179,6 +248,7 @@ router.get("/setup-db", function(req, res) {
         }
     });
 });
+
 
 router.get('/giftcards', function(req, res, next) {
     res.render('giftcards');
@@ -196,7 +266,6 @@ router.get('/virtualreality', function(req, res, next) {
 
 router.get('/autobus', function(req, res, next) {
     res.render('autobus');
-
 });
 
 router.get('/employmentAbroad', function(req, res, next) {
