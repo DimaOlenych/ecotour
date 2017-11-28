@@ -22,7 +22,5 @@
         "jquery.tablesorter": "latest",
         "ckeditor": "#full/4.3.3",
         "flag-icons": "*"
-            // Problem
-            // ,"bootstrap": "latest"
     }
 }
