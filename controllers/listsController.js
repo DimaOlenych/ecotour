@@ -8,9 +8,9 @@ module.exports = {
             .catch(err => res.status(500).json(err));
     },
     createList: function(req, res) {
-        var new_Tour = new Tour(req.body);
-        new_Tour.saveAsync()
-            .then(tour => res.status(200).json(list))
+        var new_List = new List(req.body);
+        new_List.saveAsync()
+            .then(list => res.status(200).json(list))
             .catch(err => res.status(500).json(err))
     },
 

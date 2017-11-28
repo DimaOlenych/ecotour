@@ -27,13 +27,13 @@ $(function() {
 
         $('button.edtButton').on('click', function() {
             var id = $(this).attr('data-id');
-            var myModal = $('#ListModal');
+            var myModal = $('#listmodal');
 
             $.getJSON(`/api/v1/list/${id}`, function(data) {
                 console.log(data);
                 // Problem: 
                 // Uncaught TypeError: Cannot read property 'company' of null
-                // at Object.success (lists.js:34)
+                // at Object.success (lists.js:37)
                 $('#dlgCompany').html(data.company);
                 $('#dlgRepresentative').html(data.representative);
                 $('#dlgAdress').html(data.adress);
