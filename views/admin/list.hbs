@@ -1,27 +1,27 @@
 <form class="form" role="form" method="post" action="list">
     <input type="hidden" name="hid" id="hid" value="{{list._id}}">
     <div class="form-group">
-        <label for="country_en" class="col-sm-2 form-control-label">Компанія</label>
-        <input type="text" class="form-control" id="country_en" name="country_en" required="required"
-        placeholder="Назва країни" value="{{list.company}}">
+        <label for="company" class="col-sm-2 form-control-label">Компанія</label>
+        <input type="text" class="form-control" id="company" name="company" required="required"
+        placeholder="Назва Компанії" value="{{list.company}}">
     </div>
 
     <div class="form-group">
-        <label for="country_uk" class="col-sm-2 form-control-label">Представник</label>
-        <input type="text" class="form-control" id="country_uk" name="country_uk"  required="required"
-        placeholder="Назва країни" value="{{list.representative}}">
+        <label for="representative" class="col-sm-2 form-control-label">Представник</label>
+        <input type="text" class="form-control" id="representative" name="representative"  required="required"
+        placeholder="Представник" value="{{list.representative}}">
     </div>
 
     <div class="form-group">
-        <label for="days" class="col-sm-2 form-control-label">Адреса</label>
-        <input type="number" class="form-control" id="days" name="days"  required="required"
-        placeholder="1" value="{{list.adress}}">
+        <label for="adress" class="col-sm-2 form-control-label">Адреса</label>
+        <input type="text" class="form-control" id="adress" name="adress"  required="required"
+        placeholder="Адреса" value="{{list.adress}}">
     </div>
 
     <div class="form-group">
-        <label for="price" class="col-sm-2 form-control-label">Дійсно до</label>
-        <input type="text" class="form-control" id="price" name="price"  required="required"
-        placeholder="123" value="{{list.valid}}">
+        <label for="valid" class="col-sm-2 form-control-label">Дійсно до</label>
+        <input type="text" class="form-control" id="valid" name="valid"  required="required"
+        placeholder="Період" value="{{list.valid}}">
     </div>
 
     <div class="form-group">        
