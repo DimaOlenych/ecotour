@@ -19,8 +19,11 @@ router.get('/list', function(req, res) {
     res.render('admin/list');
 });
 
+router.get('/pages', function(req, res) {
+    res.render('admin/pages');
+});
+
 router.get('/lists', function(req, res) {
     res.render('admin/lists');
 });
-
 module.exports = router;
