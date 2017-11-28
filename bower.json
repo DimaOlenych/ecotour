@@ -18,10 +18,6 @@
         "tests"
     ],
     "dependencies": {
-<<<<<<< HEAD
-        "bootsrap": "v3.3.7",
-=======
->>>>>>> fd20e84a93ebb93afa9672305ae773f48600f099
         "jquery": "^3.2.1",
         "jquery.tablesorter": "latest",
         "ckeditor": "#full/4.3.3",
