@@ -1,0 +1,25 @@
+h1 {
+    color: orange;
+    align-content: center
+}
+
+#EgyptPodrobno,
+#zagolovokEgypt,
+#Egypt,
+#imgEgypt {
+    color: orangered
+}
+
+#bestCountries {
+    color: blue
+}
+
+#imgEgypt,
+#imgTurciya,
+#imgTailand,
+#imgUkraine,
+#imgVengriya,
+#imgChehiya,
+#imgPoland {
+    padding: 5px;
+}

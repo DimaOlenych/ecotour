@@ -27,3 +27,8 @@ li a {
     text-align: left;
     text-decoration: none;
 }
+
+h1 {
+    color: orangered;
+    align-content: center
+}
