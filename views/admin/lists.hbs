@@ -1,0 +1,71 @@
+{{#section 'header'}}
+{{/section}}
+
+<div class="row">
+    <div class="col-md-1">
+        &nbsp;
+    </div>
+    <div class="col-md-10">
+        <a href="./list?action=new" style="width:100%" class="btn btn-success">Додати тур</a>
+    </div>
+    <div class="col-md-1">
+        &nbsp;
+    </div>
+</div>        
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table tablesorter" id="liststable">
+            <thead class="thead-inverse">
+                <tr>
+                    <th class="table_header">Id</th>
+                    <th class="table_header">Назва туру</th>
+                    <th class="table_header">Ціна</th>
+                    <th class="table_header">Днів</th>
+                    <th class="table_header">&nbsp;</th>
+                    <th class="table_header">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ListModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">List</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="dlgCompany">
+            1
+        </div>
+        <div id="dlgRepresentative">
+            2
+        </div>
+        <div id="dlgAdress">
+            3
+        </div>
+        <div id="dlgValid">
+            4
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#section 'scripts'}}
+<script src="/vendor/jquery.tablesorter/dist/js/jquery.tablesorter.min.js"></script>
+<script src="/javascripts/admin/lists.js"></script>
+{{/section}}

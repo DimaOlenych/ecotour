@@ -3,6 +3,7 @@ const router = express.Router();
 
 const pagesController = require('../controllers/pagesController');
 const toursController = require('../controllers/toursController');
+const listsController = require('../controllers/listsController');
 
 // pages Routes
 router.route('/pages')
@@ -23,5 +24,17 @@ router.route('/tour/:tourId') // /tour/123456 ->req.params.tourId
     .get(toursController.read)
     .put(toursController.update)
     .delete(toursController.delete);
+
+// lists Routes
+router.route('/lists')
+    .get(listsController.all)
+    .post(listsController.createList);
+
+router.route('/list/:listID') // /list/123456 ->req.params.tourId
+    .get(listsController.read)
+    .put(listsController.update)
+    .delete(listsController.delete);
+
+
 
 module.exports = router;
