@@ -30,7 +30,7 @@ module.exports = {
 
     delete: function(req, res) {
         Page.remove({
-                _id: req.params.PageId
+                _id: req.params.pageId
             })
             .then(page => res.status(200).json({
                 message: "Ok"
