@@ -5,6 +5,9 @@ module.exports = function(grunt) {
         // htmllint: {
         //     all: ['views/layouts/layout.hbs']
         // },
+        cafemocha: {
+            all: { src: 'test/tests-*.js', options: { ui: 'tdd' }, }
+        },
         eslint: {
             target: ['app.js', 'routes/*.js']
         },
@@ -15,5 +18,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['eslint', 'exec']);
+    grunt.registerTask('default', ['cafemocha', 'eslint', 'exec']);
+    grunt.registerTask('api', ['cafemocha']);
 }

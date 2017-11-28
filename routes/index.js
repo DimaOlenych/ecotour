@@ -3,6 +3,7 @@ var router = express.Router();
 var Tour = require('../models/tour');
 var Page = require('../models/page');
 var List = require('../models/list');
+var Currency = require('../models/currency');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

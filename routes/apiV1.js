@@ -4,6 +4,7 @@ const router = express.Router();
 const pagesController = require('../controllers/pagesController');
 const toursController = require('../controllers/toursController');
 const listsController = require('../controllers/listsController');
+const currencyController = require('../controllers/currencyController');
 
 // pages Routes
 router.route('/pages')
@@ -24,6 +25,17 @@ router.route('/tour/:tourId') // /tour/123456 ->req.params.tourId
     .get(toursController.read)
     .put(toursController.update)
     .delete(toursController.delete);
+
+// currency Routes
+router.route('/money')
+    .get(currencyController.all)
+    .post(currencyController.createCurrency);
+
+router.route('/currency/:currencyId')
+    .get(currencyController.read)
+    .put(currencyController.update)
+    .delete(currencyController.delete);
+
 
 // lists Routes
 router.route('/lists')
