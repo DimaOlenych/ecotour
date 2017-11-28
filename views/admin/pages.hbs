@@ -1,17 +1,15 @@
-{{#section 'scripts'}}
-<script src="/vendor/ckeditor/ckeditor.js"></script>
-<script src="/vendor/ckeditor/adapters/jquery.js"></script>
-<script src="/javascripts/admin/pages.js"></script>
-{{/section}}
-<form class="form" method="POST" action="/admin/edit">
+<form class="form">
   <div class="form-group">
     <label for="selectPage">Сторінка, яку редагємо</label>
-    <select id="selectPage" class="custom-select">
-      
+    <select id="selectPage" class="custom-select">      
     </select>
-    <textarea class="form-control" name="editor1" id="editor1" rows="3">
-        
+    <textarea class="form-control" name="editor1" id="editor1" rows="3">        
     </textarea>
   </div>
-  <button class="btn btn-primary" type="submit">Зберегти</button>
+  <button class="btn btn-primary" type="button" id="saveBtn">Зберегти</button>
 </form>
+
+{{#section 'scripts'}}
+<script src="/vendor/ckeditor/ckeditor.js"></script>
+<script src="/javascripts/admin/pages.js"></script>
+{{/section}}

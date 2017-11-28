@@ -7,11 +7,29 @@ $(function() {
             $.map(data, function(item, index) {
                 return `<option value="${item._id}">${item.name}</option>`;
             }).join());
-        $('#selectPage').change(function() {
-            var id = $(this).val();
-            $.getJSON(`/api/v1/page/${id}`, function(data) {
-                $('#editor1').append(data.main_text);
+    });
+
+    $('#selectPage').change(function() {
+        var id = $(this).val();
+        $.getJSON(`/api/v1/page/${id}`, function(data) {
+            CKEDITOR.instances.editor1.setData(data.main_text, function() {
+                this.checkDirty(); // true
             });
         });
+    });
+    $('#saveBtn').click(function() {
+        //alert(CKEDITOR.instances.editor1.getData());
+        let id = $('#selectPage').val();
+        let name = $('#selectPage option:selected').text();
+        console.log(name);
+        $.ajax({
+                method: "PUT",
+                url: `/api/v1/page/${id}`,
+                data: { name: name, main_text: CKEDITOR.instances.editor1.getData() }
+            })
+            .done(function(msg) {
+                alert("Data Saved: " + msg);
+            });
+
     });
 })
