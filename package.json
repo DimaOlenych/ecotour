@@ -27,6 +27,7 @@
     ],
     "devDependencies": {
         "browser-sync": "^2.18.13",
+        "chai": "4.1.2",
         "connect-browser-sync": "^2.1.0",
         "grunt": "^1.0.1",
         "grunt-cafe-mocha": "^0.1.13",
