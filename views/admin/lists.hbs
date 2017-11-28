@@ -1,3 +1,39 @@
+<style>
+table.darkTable {
+  font-family: "Arial Black", Gadget, sans-serif;
+  border: 2px solid #000000;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.darkTable td, table.darkTable th {
+  padding: 3px 2px;
+}
+table.darkTable tbody td {
+  font-size: 13px;
+  color: #000000;
+}
+table.darkTable thead {
+  background: #000000;
+  border-bottom: 3px solid #000000;
+}
+table.darkTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #E6E6E6;
+  text-align: center;
+  border-left: 2px solid #4A4A4A;
+}
+table.darkTable thead th:first-child {
+  border-left: none;
+}
+
+table.darkTable tfoot td {
+  font-size: 12px;
+}
+</style>
+
 {{#section 'header'}}
 {{/section}}
 
@@ -15,13 +51,14 @@
 
 <div class="row">
     <div class="col-md-12">
-        <table class="table tablesorter" id="liststable">
+        <table class="darkTable table tablesorter" id="liststable">
             <thead class="thead-inverse">
                 <tr>
                     <th class="table_header">Id</th>
-                    <th class="table_header">Назва туру</th>
-                    <th class="table_header">Ціна</th>
-                    <th class="table_header">Днів</th>
+                    <th class="table_header">Компанія</th>
+                    <th class="table_header">Представник</th>
+                    <th class="table_header">Адреса</th>
+                    <th class="table_header">Дійсно до</th>
                     <th class="table_header">&nbsp;</th>
                     <th class="table_header">&nbsp;</th>
                 </tr>
