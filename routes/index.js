@@ -253,7 +253,7 @@ router.get("/setup-db", function(req, res) {
         }
     ];
 
-    list.remove({}, function(err) {
+    List.remove({}, function(err) {
         if (err) {
             console.log(err);
         }
