@@ -34,10 +34,11 @@ $(function() {
                 // Problem: 
                 // Uncaught TypeError: Cannot read property 'company' of null
                 // at Object.success (lists.js:37)
-                $('#dlgCompany').html(data.company);
-                $('#dlgRepresentative').html(data.representative);
-                $('#dlgAdress').html(data.adress);
-                $('#dlgValid').html(data.valid);
+                $('#dlgId').val(id);
+                $('#dlgCompany').val(data.company);
+                $('#dlgRepresentative').val(data.representative);
+                $('#dlgAdress').val(data.adress);
+                $('#dlgValid').val(data.valid);
             });
 
             // and finally show the modal
@@ -47,10 +48,35 @@ $(function() {
 
         $('button.delButton').on('click', function() {
             var id = $(this).attr('data-id');
-            alert("Del " + id);
-
+            $.ajax({
+                    method: "DELETE",
+                    url: `/api/v1/list/${id}`,
+                })
+                .done(function(msg) {
+                    alert("Data deleted: " + msg);
+                });
             return false;
         }); 
     });
+
+
+
+    $('#btnSave').on('click', function() {
+        var id = $("#dlgId").val();
+        $.ajax({
+                method: "PUT",
+                url: `/api/v1/list/${id}`,
+                data: {
+                    company: $('#dlgCompany').val(),
+                    representative: $('#dlgRepresentative').val(),
+                    adress: $('#dlgAdress').val(),
+                    valid: $('#dlgValid').val()
+                }
+            })
+            .done(function(msg) {
+                $("#listmodal").modal({ show: false });
+            });
+        return false;
+    }); 
 
 });

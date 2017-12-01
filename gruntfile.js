@@ -2,9 +2,9 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 
     grunt.initConfig({
-        // htmllint: {
-        //     all: ['views/layouts/layout.hbs']
-        // },
+        htmllint: {
+            all: ['views//*/*.hbs']
+        },
         cafemocha: {
             all: { src: 'test/tests-*.js', options: { ui: 'tdd' }, }
         },
@@ -18,6 +18,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['cafemocha', 'eslint', 'exec']);
+    grunt.registerTask('default', ['htmllint', 'eslint', 'exec']);
     grunt.registerTask('api', ['cafemocha']);
 }

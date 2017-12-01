@@ -216,15 +216,13 @@ router.get("/setup-db", function(req, res) {
     Tour.remove({}, function(err) {
         if (err) {
             console.log(err);
-        }
-        Tour.insertMany(tours, function(err, docs) {
-            if (err) {
-                console.log(err);
-            }
-            res.status(200).json({
-                message: "Ok"
+        } else
+            Tour.insertMany(tours, function(err, docs) {
+                if (err) {
+                    console.log(err);
+                } else
+                    console.log("Tours created successully!")
             });
-        });
     });
 
     var lists = [{
@@ -253,19 +251,16 @@ router.get("/setup-db", function(req, res) {
         }
     ];
 
-    list.remove({}, function(err) {
+    List.remove({}, function(err) {
         if (err) {
             console.log(err);
-        }
-        List.insertMany(lists, function(err, docs2) {
-            if (err) {
-                console.log(err);
-            }
-            res.status(200).json({
-                message: "Okey",
-
+        } else
+            List.insertMany(lists, function(err, docs2) {
+                if (err) {
+                    console.log(err);
+                } else
+                    console.log("It's OK!")
             });
-        });
     });
     var countrys = [{
             country: "Єгипет",
@@ -307,15 +302,13 @@ router.get("/setup-db", function(req, res) {
     Country.remove({}, function(err) {
         if (err) {
             console.log(err);
-        }
-        Country.insertMany(countrys, function(err, docs) {
-            if (err) {
-                console.log(err);
-            }
-            res.status(200).json({
-                message: "Ok"
+        } else
+            Country.insertMany(countrys, function(err, docs) {
+                if (err) {
+                    console.log(err);
+                } else
+                    console.log('Country OK!');
             });
-        });
     });
 
     page = new Page({
@@ -328,6 +321,10 @@ router.get("/setup-db", function(req, res) {
         } else {
             console.log("Yes");
         }
+    });
+
+    res.status(200).json({
+        message: "Okey",
     });
 });
 
