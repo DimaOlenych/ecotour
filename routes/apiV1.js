@@ -43,7 +43,7 @@ router.route('/lists')
     .get(listsController.all)
     .post(listsController.createList);
 
-router.route('/list/:listID')
+router.route('/list/:listId')
     .get(listsController.read)
     .put(listsController.update)
     .delete(listsController.delete);
