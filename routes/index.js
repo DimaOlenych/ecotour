@@ -4,6 +4,7 @@ var Tour = require('../models/tour');
 var Page = require('../models/page');
 var List = require('../models/list');
 var Currency = require('../models/currency');
+var Country = require('../models/country');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -233,6 +234,56 @@ router.get("/setup-db", function(req, res) {
             res.status(200).json({
                 message: "Okey",
 
+            });
+        });
+    });
+    var countrys = [{
+            country: "Єгипет",
+            capital: "Каір",
+            content: ""
+        },
+        {
+            country: "Турція",
+            capital: "Анкара",
+            content: ""
+        },
+        {
+            country: "Тайланд",
+            capital: "Бангкок",
+            content: ""
+        },
+        {
+            country: "Україна",
+            capital: "Київ",
+            content: ""
+        },
+        {
+            country: "Чехія",
+            capital: "Прага",
+            content: ""
+        },
+        {
+            country: "Угорщина",
+            capital: "Будапешт",
+            content: ""
+        },
+        {
+            country: "Польща",
+            capital: "Варшава",
+            content: ""
+        },
+    ];
+
+    Country.remove({}, function(err) {
+        if (err) {
+            console.log(err);
+        }
+        Country.insertMany(countrys, function(err, docs) {
+            if (err) {
+                console.log(err);
+            }
+            res.status(200).json({
+                message: "Ok"
             });
         });
     });

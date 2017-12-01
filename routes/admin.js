@@ -26,4 +26,12 @@ router.get('/pages', function(req, res) {
 router.get('/lists', function(req, res) {
     res.render('admin/lists');
 });
+
+router.get('/country', function(req, res) {
+    res.render('admin/country');
+});
+
+router.get('/countrys', function(req, res) {
+    res.render('admin/countrys');
+});
 module.exports = router;
