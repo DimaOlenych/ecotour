@@ -6,6 +6,10 @@ var List = require('../models/list');
 var Currency = require('../models/currency');
 var Country = require('../models/country');
 
+const nodemailer = require('nodemailer');
+const account = require('../config/account')
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     Page.findOne({
@@ -71,16 +75,8 @@ router.get('/about', function(req, res, next) {
 });
 
 router.get('/contact', function(req, res, next) {
-    var scripts = [{
-        src: "/javascripts/contact.js"
-    }];
-    var styles = [{
-        href: "/stylesheets/giftcards.css"
-    }];
     res.render('contact', {
-        title: 'Контакти',
-        scripts: scripts,
-        styles: styles
+        title: 'Контакти'
     });
 });
 
@@ -89,9 +85,40 @@ router.post("/contact", function(req, res) {
     console.log(req.body.email);
     console.log(req.body.message);
     if (req.body.human === "5") {
-        res.render("contact", {
-            title: 'Контакти'
+        //-------------------------------------------------------------------------------------------        
+        console.log(account);
+        // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: account.user,
+                pass: account.pass
+            }
         });
+
+        // setup email data with unicode symbols
+        let mailOptions = {
+            from: '"Eco Tour Company" <region.it.mailer@gmail.com', // sender address
+            to: req.body.email, // list of receivers
+            subject: 'Message from Eco Tour', // Subject line
+            text: "Дякуюэмо за заявку! Менеджер зв'яжеться найближчим часом", // plain text body
+            html: "<b>Дякуюэмо за заявку!</b> Менеджер зв'яжеться найближчим часом" // html body
+        };
+
+        // send mail with defined transport object
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+
+            res.render('mail-ok', {
+                title: 'Контакти',
+                messageId: info.messageId,
+                previewURL: nodemailer.getTestMessageUrl(info)
+            });
+        });
+
+
     } else {
         res.render("error", {
             title: 'Помилка',
