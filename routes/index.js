@@ -7,7 +7,10 @@ var Currency = require('../models/currency');
 var Country = require('../models/country');
 
 const nodemailer = require('nodemailer');
-const account = require('../config/account')
+//const account = require('../config/account')
+const config = require('config');
+//...
+const account = config.get('application.gmail');
 
 
 /* GET home page. */
@@ -114,7 +117,7 @@ router.post("/contact", function(req, res) {
             res.render('mail-ok', {
                 title: 'Контакти',
                 messageId: info.messageId,
-                previewURL: nodemailer.getTestMessageUrl(info)
+                previewURL: "Лист відправлено успішно"
             });
         });
 

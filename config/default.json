@@ -1,0 +1,13 @@
+{
+    "application": {
+        "dbConfig": {
+            "host": "localhost",
+            "port": 5984,
+            "dbName": "customers"
+        },
+        "gmail": {
+            "user": "aaaaaaaa@gmail.com",
+            "pass": "12345678"
+        }
+    }
+}
