@@ -53,7 +53,7 @@ router.route('/countrys')
     .get(countrysController.all)
     .post(countrysController.createCountry);
 
-router.route('/list/:listID') // /country/123456 ->req.params.tourId
+router.route('/country/:countryId') // /country/123456 ->req.params.tourId
     .get(countrysController.read)
     .put(countrysController.update)
     .delete(countrysController.delete);
