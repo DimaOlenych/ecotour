@@ -9,7 +9,7 @@ module.exports = {
     },
     createList: function(req, res) {
         var new_List = new List(req.body);
-        new_List.saveAsync()
+        new_List.save()
             .then(list => res.status(200).json(list))
             .catch(err => res.status(500).json(err))
     },
