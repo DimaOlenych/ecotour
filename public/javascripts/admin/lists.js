@@ -18,8 +18,8 @@ $(function() {
         $('#liststable tbody').append(
             $.map(data, function(item, index) {
                 let dataStr = `<td>${item._id}</td><td>${item.company}</td><td>${item.representative}</td><td>${item.adress}</td><td>${item.valid}</td>`;
-                let btnStr1 = `<td><button type="button" data-id="${item._id}" data-company="${item.company}" data-representative="${item.representative}" data-adress="${item.adress}" data-valid="${item.valid}" class="btn btn-default edtButton">Edit</button></td>`;
-                let btnStr2 = `<td><button type="button" data-id="${item._id}" data-company="${item.company}" data-representative="${item.representative}" data-adress="${item.adress}" data-valid="${item.valid}" class="btn btn-default delButton">Delete</button></td>`;
+                let btnStr1 = `<td><button type="button" data-id="${item._id}" data-company="${item.company}" data-representative="${item.representative}" data-adress="${item.adress}" data-valid="${item.valid}" class="btn btn-warning edtButton">Edit</button></td>`;
+                let btnStr2 = `<td><button type="button" data-id="${item._id}" data-company="${item.company}" data-representative="${item.representative}" data-adress="${item.adress}" data-valid="${item.valid}" class="btn btn-danger delButton">Delete</button></td>`;
                 return "<tr>" + dataStr + btnStr1 + btnStr2 + "</tr>";
             }).join());
 
