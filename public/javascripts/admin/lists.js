@@ -18,22 +18,17 @@ $(function() {
         $('#liststable tbody').append(
             $.map(data, function(item, index) {
                 let dataStr = `<td>${item._id}</td><td>${item.company}</td><td>${item.representative}</td><td>${item.adress}</td><td>${item.valid}</td>`;
-                let btnStr1 = `<td><button type="button" data-id="${item._id}" data-company="${item.company}" data-representative="${item.representative}" data-adress="${item.adress}" data-valid="${item.valid}" class="btn btn-warning edtButton">Edit</button></td>`;
-                let btnStr2 = `<td><button type="button" data-id="${item._id}" data-company="${item.company}" data-representative="${item.representative}" data-adress="${item.adress}" data-valid="${item.valid}" class="btn btn-danger delButton">Delete</button></td>`;
-                return "<tr>" + dataStr + btnStr1 + btnStr2 + "</tr>";
+                let btnStr1 = `<td><button type="button" data-id="${item._id}" data-company="${item.company}" data-representative="${item.representative}" data-adress="${item.adress}" data-valid="${item.valid}" class="btn btn-warning edtButton">Edit/Delete</button></td>`;
+                return "<tr>" + dataStr + btnStr1 + "</tr>";
             }).join());
 
         $("#liststable").trigger("update"); 
 
         $('button.edtButton').on('click', function() {
             var id = $(this).attr('data-id');
-            var myModal = $('#listmodal');
+            var myModal = $('#allInOneModal');
 
             $.getJSON(`/api/v1/list/${id}`, function(data) {
-                console.log(data);
-                // Problem: 
-                // Uncaught TypeError: Cannot read property 'company' of null
-                // at Object.success (lists.js:37)
                 $('#dlgId').val(id);
                 $('#dlgCompany').val(data.company);
                 $('#dlgRepresentative').val(data.representative);
@@ -46,33 +41,22 @@ $(function() {
             return false;
         }); 
 
-        $('button.delButton').on('click', function() {
-            var id = $(this).attr('data-id');
-            var company = $(this).attr('data-company');
-            var representative = $(this).attr('data-representative');
-            var adress = $(this).attr('data-adress');
-            var valid = $(this).attr('data-valid');
-            $('#dellistmodal').modal({ show: true })
-
-            $('#hid').val(id);
-            $('#company').val(company);
-            $('#representative').val(representative);
-            $('#adress').val(adress);
-            $('#valid').val(valid);
-
-            $('#btnDel').on('click', function() {
-                $.ajax({
-                        method: "DELETE",
-                        url: `/api/v1/list/${id}`,
-                    })
-                    .done(function(msg) {
-                        alert("успешно Удалено: " + " " + company + " " + representative + " " + adress + " " + valid);
-                    });
-                $("#dellistmodal").modal('toggle');
-            });
-        }); 
-
-
+        $('#btnDel').on('click', function() {
+            var id = $("#dlgId").val();
+            var company = $("#dlgCompany").val();
+            var representative = $("#dlgRepresentative").val();
+            var adress = $("#dlgAdress").val();
+            var valid = $("#dlgValid").val();
+            $.ajax({
+                    method: "DELETE",
+                    url: `/api/v1/list/${id}`,
+                })
+                .done(function(msg) {
+                    alert("Успешно удалено: " + " " + company + " " + representative + " " + adress + " " + valid);
+                });
+            $("#allInOneModal").modal('toggle');
+            location.reload();
+        });
 
         $('#btnSave').on('click', function() {
             var id = $("#dlgId").val();
@@ -87,9 +71,9 @@ $(function() {
                     }
                 })
                 .done(function(msg) {
-                    $("#listmodal").modal('toggle');
+                    $("#allInOneModal").modal('toggle');
                 });
-            return false;
+            location.reload();
         }); 
 
         $('#btnNew').on('click', function() {
@@ -112,6 +96,7 @@ $(function() {
                 .done(function(msg) {
                     $("#addlistmodal").modal('toggle');
                 });
+            location.reload();
         }); 
     });
 });

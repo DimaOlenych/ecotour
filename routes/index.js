@@ -245,7 +245,7 @@ router.get("/setup-db", function(req, res) {
         },
         {
             company: "ABK",
-            representative: "Кам-Под, Лесі Українки 14",
+            representative: "В.І Шоколадний",
             adress: "Кам-Под, Лесі Українки 14",
             valid: "Листопад 2019"
         }

@@ -6,11 +6,10 @@ $(function() {
                 // disable it by setting the property sorter to false 
                 sorter: false
             },
-            // assign the third column (we start counting zero) 
-            5: {
-                // disable it by setting the property sorter to false 
-                sorter: false
-            }
         }
+    });
+    $(function() {
+        // ready function    
+        setNavActive("#nav-bar-pages");
     });
 });
