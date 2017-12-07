@@ -1,10 +1,10 @@
 $(function() {
     $("#moneytable").tablesorter({
         headers: {
-            5: {
+            4: {
                 sorter: false
             },
-            6: {
+            5: {
                 sorter: false
             }
         }
