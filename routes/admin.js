@@ -34,4 +34,8 @@ router.get('/country', function(req, res) {
 router.get('/countrys', function(req, res) {
     res.render('admin/countrys');
 });
+
+router.get('/money', function(req, res) {
+    res.render('admin/money');
+});
 module.exports = router;

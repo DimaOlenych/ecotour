@@ -12,7 +12,8 @@ module.exports = {
         var new_Currency = new Currency(req.body);
         if (new_Currency.currencyPrice < 0)
             res.status(500).json({ msg: "Валюта не може бути від'ємною!!!" });
-        new_Currency.save()
+        else
+            new_Currency.save()
             .then(curr => res.status(200).json(curr))
             .catch(err => res.status(500).json(err));
     },
