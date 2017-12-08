@@ -3,8 +3,9 @@
     "version": "0.0.9",
     "private": true,
     "scripts": {
-        "start": "set NODE_ENV=production && node ./bin/www",
-        "dev": "nodemon ./bin/www"
+        "start": "node ./bin/www",
+        "dev": "nodemon ./bin/www",
+        "postinstall": "bower cache clean && bower install"
     },
     "dependencies": {
         "body-parser": "~1.18.2",
@@ -20,6 +21,9 @@
         "morgan": "~1.9.0",
         "nodemailer": "4.4.0",
         "serve-favicon": "~2.4.5"
+    },
+    "engines": {
+        "node": "6.11.3"
     },
     "author": "A.Andruhovski",
     "license": "ISC",
