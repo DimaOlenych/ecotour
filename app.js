@@ -54,11 +54,16 @@ if (app.get('env') == 'development') {
     var bs = browserSync(config);
     var cbs = require('connect-browser-sync');
     app.use(cbs(bs));
+    mongoose.connect('mongodb://127.0.0.1:27017/ecotour', {
+        useMongoClient: true
+    });
+} else {
+    mongoose.connect('mongodb://newuser:Start2017@ds135186.mlab.com:35186/heroku_6ns1b38c', {
+        useMongoClient: true
+    });
 }
 
-mongoose.connect('mongodb://127.0.0.1:27017/ecotour', {
-    useMongoClient: true
-});
+
 mongoose.Promise = global.Promise;
 
 app.use('/', index);
