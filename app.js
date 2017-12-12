@@ -58,7 +58,7 @@ if (app.get('env') == 'development') {
         useMongoClient: true
     });
 } else {
-    mongoose.connect('mongodb://newuser:Start2017@ds135186.mlab.com:35186/heroku_6ns1b38c', {
+    mongoose.connect('*********', {
         useMongoClient: true
     });
 }
